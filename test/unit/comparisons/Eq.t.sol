@@ -29,7 +29,7 @@ contract EqTest is SIMDTest {
 
     function testFuzz_eq_2x128(uint256 rng) public setSeed(rng) {
         (uint256 x, uint256 y, uint256 z) = generateInputs(128);
-        uint256 msbs = SIMD.msbMask(128);
+        uint256 msbs = SIMD.MSB_2x128;
         uint256 result = SIMD.eq(x, y, msbs, 128);
         assertEq(result, z);
 
@@ -39,7 +39,7 @@ contract EqTest is SIMDTest {
 
     function testFuzz_eq_4x64(uint256 rng) public setSeed(rng) {
         (uint256 x, uint256 y, uint256 z) = generateInputs(64);
-        uint256 msbs = SIMD.msbMask(64);
+        uint256 msbs = SIMD.MSB_4x64;
         uint256 result = SIMD.eq(x, y, msbs, 64);
         assertEq(result, z);
 
@@ -49,7 +49,7 @@ contract EqTest is SIMDTest {
 
     function testFuzz_eq_8x32(uint256 rng) public setSeed(rng) {
         (uint256 x, uint256 y, uint256 z) = generateInputs(32);
-        uint256 msbs = SIMD.msbMask(32);
+        uint256 msbs = SIMD.MSB_8x32;
         uint256 result = SIMD.eq(x, y, msbs, 32);
         assertEq(result, z);
 
@@ -59,7 +59,7 @@ contract EqTest is SIMDTest {
 
     function testFuzz_eq_16x16(uint256 rng) public setSeed(rng) {
         (uint256 x, uint256 y, uint256 z) = generateInputs(16);
-        uint256 msbs = SIMD.msbMask(16);
+        uint256 msbs = SIMD.MSB_16x16;
         uint256 result = SIMD.eq(x, y, msbs, 16);
         assertEq(result, z);
 
@@ -69,7 +69,7 @@ contract EqTest is SIMDTest {
 
     function testFuzz_eq_32x8(uint256 rng) public setSeed(rng) {
         (uint256 x, uint256 y, uint256 z) = generateInputs(8);
-        uint256 msbs = SIMD.msbMask(8);
+        uint256 msbs = SIMD.MSB_32x8;
         uint256 result = SIMD.eq(x, y, msbs, 8);
         assertEq(result, z);
 
